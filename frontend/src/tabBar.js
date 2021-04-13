@@ -9,6 +9,15 @@ class TabBar extends Component{
         return (
         <Fragment>
             <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+                {/* <div class="navbar-brand">
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div> */}
+                {/* <div id="navbarExampleTransparentExample" class="navbar-menu is-active"></div> */}
+
                 <div id="navbarExampleTransparentExample" class="navbar-menu">
                     {this.value && 
                         <div>

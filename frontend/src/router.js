@@ -1,7 +1,7 @@
 import React from 'react';
 import {HashRouter, Route, Switch} from 'react-router-dom';
 import Index from './index'
-import {Login, LoginMain} from './login'
+import {Login, SignInScreen} from './login'
 import Signup from './signup'
 import Dashboard from './dashboard';
 import VideoDemo from './VideoSquare'

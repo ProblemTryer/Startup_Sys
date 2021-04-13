@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react'
 import TabBar from './tabBar'
-import {Login, LoginMain} from './login'
+import {Login, SignInScreen} from './login'
 
 
 class Signup extends Component{
@@ -8,7 +8,7 @@ class Signup extends Component{
         return(
             <div>
                 <TabBar value={true}/>
-                <LoginMain text={"Sign Up"}/>
+                <SignInScreen />
             </div>
         )
     }

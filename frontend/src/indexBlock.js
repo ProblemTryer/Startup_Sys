@@ -15,8 +15,8 @@ function RightSection(props){
 function LeftSection(props){
     return(
         <div class="tile is-child">
-            {/* <div class="column" /><div class="column" /><div class="column" /><div class="column" /> */}
-            <div class="column" /><div class="column" /><div class="column" />
+            {/* <div class="column" /><div class="column" /><div class="column" /> */}
+            <div class="column" /><div class="column" />
             <article class="tile is-child notification is-white" 
                      style={{backgroundColor: "rgba(255,255,255,.1)", 
                              WebkitBackdropFilter:"blur(10px)", 
