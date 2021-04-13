@@ -16,8 +16,11 @@ function LeftSection(props){
     return(
         <div class="tile is-child">
             {/* <div class="column" /><div class="column" /><div class="column" /><div class="column" /> */}
-            <div class="column" /><div class="column" /><div class="column" /><div class="column" />
-            <article class="tile is-child notification is-white" style={{backgroundColor: "transparent"}}>
+            <div class="column" /><div class="column" /><div class="column" />
+            <article class="tile is-child notification is-white" 
+                     style={{backgroundColor: "rgba(255,255,255,.1)", 
+                             WebkitBackdropFilter:"blur(10px)", 
+                             backdropFilter:"blur(10px)"}}>
                 <p class="title is-2" style={{font:"50px Georgia, serif"}}>
                     A safe place to share difficult emotions and improve your mental health
                 </p>
