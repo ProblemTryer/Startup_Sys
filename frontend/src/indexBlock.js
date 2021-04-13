@@ -18,8 +18,10 @@ function LeftSection(props){
             {/* <div class="column" /><div class="column" /><div class="column" /><div class="column" /> */}
             <div class="column" /><div class="column" /><div class="column" /><div class="column" />
             <article class="tile is-child notification is-white" style={{backgroundColor: "transparent"}}>
-                <p class="title is-2">A safe place to share difficult emotions and improve your mental health</p>
-                <p class="subtitle"> -- SadPandas</p>
+                <p class="title is-2" style={{font:"50px Georgia, serif"}}>
+                    A safe place to share difficult emotions and improve your mental health
+                </p>
+                <p class="subtitle"  style={{font:"25px Georgia, serif", float:"right"}}> -- SadPandas</p>
             </article>
             <div align="center" >
                 <a class="button is-link is-light is-large is-rounded is-primary" href='#/login'>
