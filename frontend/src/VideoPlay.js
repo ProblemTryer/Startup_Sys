@@ -129,7 +129,7 @@ class VideoJourney extends Component{
             <div>
                 <ClubTabBar clubName="Lonely Pandas"/>
                 <BrandImage />
-                <section class="section is-medium" style={{position:"fixed"}}>
+                <section class="section is-medium" style={{position:"fixed", marginTop:"-2%"}}>
                     <HorizontalScrollingVideo />
                 </section>
             </div>
