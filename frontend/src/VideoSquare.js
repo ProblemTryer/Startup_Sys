@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react'
 import ClubTabBar from './clubTabBar'
-
+import firebase from "firebase/app";
 
 class BrandImage extends Component{
     render(){
@@ -61,22 +61,62 @@ class VideosCard extends Component{
 }
 
 
+function CreateVideoCard(tags) {
+    return tags.LonelyPandas.tagContents.forEach(video => {
+        <VideosCard title_name={video} image_name="VideoCover1.jpg" likes="50" comments="24"/>
+    })
+}
+
+
+class VideoSqure extends Component{
+    state = {
+        videos: null,
+    }
+
+    async componentDidMount() {
+        const idToken = await firebase.auth().currentUser?.getIdToken()
+        console.log(idToken)
+        const response = await fetch('http://localhost:8000/dev/tags', { 
+            headers: {'Authorization': idToken}
+        })
+        if (response.status === 401) {
+            return console.log('unauthorized')
+        }
+        const videosList = await response.json()
+        const videoNames = videosList.LonelyPandas.videoNames
+        // If you meant to render a collection of children, use an array instead.
+        this.setState({videos: videoNames})
+    }
+
+    render(){
+        return(
+            <section class="section is-medium">
+                <div class="columns is-centered" >
+                    {
+                        this.state.videos && this.state.videos.map(video => {
+                            return <VideosCard title_name={video} image_name="VideoCover1.jpg" likes="50" comments="24"/>
+                        })
+                    }
+                    {/* <VideosCard title_name="My Experience in COVID" image_name="VideoCover1.jpg" likes="50" comments="24"/>
+                    <VideosCard title_name="I Am Not Alone Now" image_name="VideoCover2.jpg" likes="34" comments="45"/> */}
+                </div>
+                <div class="columns is-centered" >
+                    <VideosCard title_name="A Lonely Lion, Help Me" image_name="VideoCover3.jpg" likes="49" comments="75"/>
+                    <VideosCard title_name="Just Joined For Fun" image_name="VideoCover4.jpg" likes="123" comments="3"/>
+                </div>
+            </section> 
+        )
+    }
+}
+
+
 class VideoDemo extends Component{
     render(){
         return(
             <div>
                 <ClubTabBar clubName="Lonely Pandas"/>
                 <BrandImage />
-                <section class="section is-medium">
-                    <div class="columns is-centered" >
-                        <VideosCard title_name="My Experience in COVID" image_name="VideoCover1.jpg" likes="50" comments="24"/>
-                        <VideosCard title_name="I Am Not Alone Now" image_name="VideoCover2.jpg" likes="34" comments="45"/>
-                    </div>
-                    <div class="columns is-centered" >
-                        <VideosCard title_name="A Lonely Lion, Help Me" image_name="VideoCover3.jpg" likes="49" comments="75"/>
-                        <VideosCard title_name="Just Joined For Fun" image_name="VideoCover4.jpg" likes="123" comments="3"/>
-                    </div>
-                </section>
+                <VideoSqure />
             </div>
         )
     }

@@ -4,7 +4,6 @@ import TabBar from './tabBar'
 import firebase from "firebase/app";
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
-
 var firebaseui = require('firebaseui');
 var firebaseConfig = {
     apiKey: "AIzaSyCVN-bAR9d9PjwuhofMG1jr7WOHgDbQfYE",
