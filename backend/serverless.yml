@@ -10,7 +10,6 @@ custom:
   serverless-offline:
     httpPort: 8000
 
-
 package:
   patterns:
     - '!node_modules/**'
