@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react'
 import ClubTabBar from './clubTabBar'
 import firebase from "firebase/app";
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
 class BrandImage extends Component{
     render(){
@@ -71,24 +72,75 @@ function CreateVideoCard(tags) {
 class VideoSqure extends Component{
     state = {
         videos: null,
+        isSignedIn: false,
+    }
+
+    uiConfig = {
+        callbacks: {
+          signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+            // User successfully signed in.
+            // Return type determines whether we continue the redirect automatically
+            // or whether we leave that to developer to handle.
+            return true;
+          },
+          uiShown: function() {
+            // The widget is rendered.
+            // Hide the loader.
+            // document.getElementById('loader').style.display = 'none';
+          }
+        },
+        // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+        signInFlow: 'popup',
+        signInSuccessUrl: '#/login',
+        signInOptions: [
+            {
+                provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                // signInMethod: firebase.auth.EmailAuthProvider.EMAIL_LINK_SIGN_IN_METHOD
+                signInMethod: firebase.auth.EmailAuthProvider.EMAIL_PASSWORD_SIGN_IN_METHOD,
+                requireDisplayName: false
+            },
+            {
+                provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+            },
+        ],
+    };
+    
+    async componentDidUpdate(prevProps, prevState) {
+        if (this.state.isSignedIn !== prevState.isSignedIn) {
+            const idToken = await firebase.auth().currentUser?.getIdToken()
+            console.log(idToken)
+            const response = await fetch('http://localhost:8000/dev/tags', { 
+                headers: {'Authorization': idToken}
+            })
+            if (response.status === 401) {
+                return console.log('unauthorized')
+            }
+            const videosList = await response.json()
+            const videoNames = videosList.LonelyPandas.videoNames
+            // If you meant to render a collection of children, use an array instead.
+            this.setState({videos: videoNames})
+        }
     }
 
     async componentDidMount() {
-        const idToken = await firebase.auth().currentUser?.getIdToken()
-        console.log(idToken)
-        const response = await fetch('http://localhost:8000/dev/tags', { 
-            headers: {'Authorization': idToken}
-        })
-        if (response.status === 401) {
-            return console.log('unauthorized')
-        }
-        const videosList = await response.json()
-        const videoNames = videosList.LonelyPandas.videoNames
-        // If you meant to render a collection of children, use an array instead.
-        this.setState({videos: videoNames})
+        this.unregisterAuthObserver = firebase.auth().onAuthStateChanged(
+            (user) => this.setState({isSignedIn: !!user})
+        );
+    }
+
+      // Make sure we un-register Firebase observers when the component unmounts.
+    componentWillUnmount() {
+        this.unregisterAuthObserver();
     }
 
     render(){
+        if (!this.state.isSignedIn) {
+            return (
+              <div>
+                <h1>Please signin</h1>
+              </div>
+            );
+        }
         return(
             <section class="section is-medium">
                 <div class="columns is-centered" >
