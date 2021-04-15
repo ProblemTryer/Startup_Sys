@@ -75,36 +75,6 @@ class VideoSqure extends Component{
         isSignedIn: false,
     }
 
-    uiConfig = {
-        callbacks: {
-          signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-            // User successfully signed in.
-            // Return type determines whether we continue the redirect automatically
-            // or whether we leave that to developer to handle.
-            return true;
-          },
-          uiShown: function() {
-            // The widget is rendered.
-            // Hide the loader.
-            // document.getElementById('loader').style.display = 'none';
-          }
-        },
-        // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-        signInFlow: 'popup',
-        signInSuccessUrl: '#/login',
-        signInOptions: [
-            {
-                provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
-                // signInMethod: firebase.auth.EmailAuthProvider.EMAIL_LINK_SIGN_IN_METHOD
-                signInMethod: firebase.auth.EmailAuthProvider.EMAIL_PASSWORD_SIGN_IN_METHOD,
-                requireDisplayName: false
-            },
-            {
-                provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-            },
-        ],
-    };
-    
     async componentDidUpdate(prevProps, prevState) {
         if (this.state.isSignedIn !== prevState.isSignedIn) {
             const idToken = await firebase.auth().currentUser?.getIdToken()
@@ -136,8 +106,8 @@ class VideoSqure extends Component{
     render(){
         if (!this.state.isSignedIn) {
             return (
-              <div>
-                <h1>Please signin</h1>
+              <div style={{margin:"0 auto"}}>
+                <h1>Please login</h1>
               </div>
             );
         }
