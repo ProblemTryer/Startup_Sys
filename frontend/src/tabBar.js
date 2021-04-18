@@ -32,10 +32,10 @@ class TabBar extends Component{
                         <a class="navbar-item">
                             <h1 class="title is-4">About</h1>
                         </a>
-
+{/* 
                         <a class="navbar-item">
                             <h1 class="title is-4">Help</h1>
-                        </a>
+                        </a> */}
                         
                         <a class="navbar-item" href="#/dashboard">
                             <h1 class="title is-4">Demo</h1>
@@ -50,9 +50,9 @@ class TabBar extends Component{
                                 <a class="navbar-item">
                                     <h1 class="title is-5">Contact</h1>
                                 </a>
-                                <a class="navbar-item">
+                                {/* <a class="navbar-item">
                                 <h1 class="title is-5">Report an issue</h1>
-                                </a>
+                                </a> */}
                             </div>
                         </div>
                     </div>
