@@ -29,32 +29,20 @@ class TabBar extends Component{
                         </div>
                     }
                     <div class="navbar-end">
-                        <a class="navbar-item">
+                        <a class="navbar-item" href="#/about">
                             <h1 class="title is-4">About</h1>
                         </a>
 
-                        <a class="navbar-item">
-                            <h1 class="title is-4">Help</h1>
+                        <a class="navbar-item" >
+                            
+                            <a href={`mailto:rk453@cornell.edu`}><h1 class="title is-4">Help</h1></a>
                         </a>
                         
                         <a class="navbar-item" href="#/dashboard">
                             <h1 class="title is-4">Demo</h1>
                         </a>
 
-                        <div class="navbar-item has-dropdown is-hoverable">
-                            <a class="navbar-link">
-                                <h1 class="title is-4">More</h1>
-                            </a>
-
-                            <div class="navbar-dropdown">
-                                <a class="navbar-item">
-                                    <h1 class="title is-5">Contact</h1>
-                                </a>
-                                <a class="navbar-item">
-                                <h1 class="title is-5">Report an issue</h1>
-                                </a>
-                            </div>
-                        </div>
+                        
                     </div>
 
                     <div class="navbar-start">

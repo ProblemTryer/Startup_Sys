@@ -28,7 +28,7 @@ function LeftSection(props){
             </article>
             <div align="center" >
                 <a class="button is-link is-light is-large is-rounded is-primary" href='#/login'>
-                    <h class="title is-3" style={{marginRight:"10px", height: "50%"}}>LogIn</h> 
+                    <h class="title is-3" style={{marginRight:"10px", height: "50%"}}>Log In</h> 
                     <i class="fas fa-arrow-right"></i>
                 </a>
             </div>

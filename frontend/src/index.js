@@ -1,3 +1,4 @@
+import 'semantic-ui-css/semantic.min.css'
 import React, {Component, Fragment} from 'react'
 import ReactDOM from 'react-dom'
 import TabBar from './tabBar'
