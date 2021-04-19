@@ -34,7 +34,7 @@ class TabBar extends Component{
                         </a>
 
                         <a class="navbar-item" >
-                            <a href={`mailto:rk453@cornell.edu`}><h1 class="title is-4">Help</h1></a>
+                            <a href={`mailto:jh2695@cornell.edu`}><h1 class="title is-4">Help</h1></a>
                         </a>
 
                         
@@ -49,7 +49,7 @@ class TabBar extends Component{
 
                             <div class="navbar-dropdown">
                                 <a class="navbar-item">
-                                    <h1 class="title is-5">Contact</h1>
+                                <a href={`mailto:jh2695@cornell.edu`}><h1 class="title is-5">Contact</h1></a>
                                 </a>
                                 {/* <a class="navbar-item">
                                 <h1 class="title is-5">Report an issue</h1>
