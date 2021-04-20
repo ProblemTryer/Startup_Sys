@@ -96,7 +96,7 @@ class DesktopContainer extends Component {
           <Segment
             inverted
             textAlign='center'
-            style={{ minHeight: 700, padding: '1em 0em' }}
+            style={{ minHeight: 700, padding: '1em 0em'}}
             vertical
           >
             <Menu
@@ -107,17 +107,65 @@ class DesktopContainer extends Component {
               size='large'
             >
               <Container>
-                <Menu.Item as='a' active>
+                {/* <Menu.Item as='a' active>
                   About
-                </Menu.Item>
-            
+                </Menu.Item> */}
+                <nav class="navbar is-transparent" role="navigation" aria-label="main navigation" >
+                  <div class="navbar-menu" id="navbarExampleTransparentExample"  style={{backgroundColor: "transparent"}}>
+                    <div class="navbar-start" style={{backgroundColor: "transparent"}}>
+                        <div>
+                            <a href="/">
+                            <figure class="image" style={{height:"35px", width:"45px"}}>
+                                <img alt='No image' style={{float:'right', height:"33px", width:"35px"}} src="logo.png" />
+                                <p style={{fontSize:"small", color:fixed? "#000000": "#F0FFFF"}}>SadPandas</p>
+                            </figure>
+                            
+                            </a>
+                        </div>
+                        <a class="navbar-item" href="#/about">
+                            <h1 class="title is-4" style={{color:fixed? "#000000": "#F0FFFF"}}>About</h1>
+                        </a>
+
+                        <a class="navbar-item" >
+                            <a href={`mailto:jh2695@cornell.edu`}><h1 class="title is-4" style={{color:fixed? "#000000": "#F0FFFF"}}>Help</h1></a>
+                        </a>
+
+                        <a class="navbar-item" href="#/dashboard">
+                            <h1 class="title is-4"  style={{color:fixed? "#000000": "#F0FFFF"}}>Demo</h1>
+                        </a>
+
+                        <div class="navbar-item has-dropdown is-hoverable" style={{backgroundColor: "transparent"}}>
+                            <a class="navbar-link">
+                                <h1 class="title is-4" style={{color:fixed? "#000000": "#F0FFFF"}}>More</h1>
+                            </a>
+
+                            <div class="navbar-dropdown" style={{border:"0px", backgroundColor: fixed? "white": "transparent"}}>
+                                <a class="navbar-item">
+                                <a href={`mailto:jh2695@cornell.edu`}><h1 class="title is-5" style={{color:fixed? "#000000": "#F0FFFF"}}>Contact</h1></a>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+              </nav>
+
                 <Menu.Item position='right'>
-                  <Button as='a' onClick={this.btnClick.bind(this)} inverted={!fixed}>
+                  <div class="navbar-item">
+                    <div class="buttons">
+                    <a class="button is-primary" href='#/signup'>
+                        <strong>Sign up</strong>
+                    </a>
+                    <a class="button is-primary is-light" href='#/login'>
+                        <strong>Log in</strong>
+                    </a>
+                    </div>
+                  </div>
+                  {/* <Button as='a' onClick={this.btnClick.bind(this)} inverted={!fixed}>
                     Log in
                   </Button>
                   <Button as='a' onClick={this.btnClickSignup.bind(this)} inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>
                     Sign Up
-                  </Button>
+                  </Button> */}
                 </Menu.Item>
               </Container>
             </Menu>
@@ -159,12 +207,15 @@ class MobileContainer extends Component {
             vertical
             visible={sidebarOpened}
           >
-            <Menu.Item as='a' active>
+            <Menu.Item as='a' active href="#/about">
               About
             </Menu.Item>
      
-            <Menu.Item as='a'>Log in</Menu.Item>
-            <Menu.Item as='a'>Sign Up</Menu.Item>
+            <Menu.Item as='a' href="#/dashboard">Demo</Menu.Item>
+            <Menu.Item as='a' href="#/login">Login</Menu.Item>
+            <Menu.Item as='a' href="#/signup">Sign Up</Menu.Item>
+            <Menu.Item as='a' href={`mailto:jh2695@cornell.edu`}>Help</Menu.Item>
+            <Menu.Item as='a' href={`mailto:jh2695@cornell.edu`}>Contact</Menu.Item>
           </Sidebar>
 
           <Sidebar.Pusher dimmed={sidebarOpened}>
@@ -180,10 +231,10 @@ class MobileContainer extends Component {
                     <Icon name='sidebar' />
                   </Menu.Item>
                   <Menu.Item position='right'>
-                    <Button as='a' onClick={this.btnClick.bind(this)} inverted>
+                    <Button as='a' href="#/login" inverted>
                     Log in
                     </Button>
-                    <Button as='a' inverted style={{ marginLeft: '0.5em' }}>
+                    <Button as='a'href="#/signup" inverted style={{ marginLeft: '0.5em' }}>
                       Sign Up
                     </Button>
                   </Menu.Item>
@@ -221,7 +272,7 @@ ResponsiveContainer.propTypes = {
 
 const AboutMainBlock = () => (
   <ResponsiveContainer>
-    <Segment style={{ padding: '8em 0em' }} vertical>
+    <Segment style={{ padding: '8em 0em'}} vertical>
       <Grid container stackable verticalAlign='middle'>
         <Grid.Row>
           <Grid.Column width={8}>
@@ -304,7 +355,6 @@ const AboutMainBlock = () => (
     </Segment>
   </ResponsiveContainer>
 )
-
 
 // class AboutMainBlock extends Component{
 //     render(){

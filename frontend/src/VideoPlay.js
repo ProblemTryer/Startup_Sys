@@ -43,7 +43,7 @@ const data = [
     {name: 'item4', image_name: "VideoCover1.jpg", title_name: questions.q4},
     {name: 'item5', image_name: "VideoCover1.jpg", title_name: questions.q5},
     {name: 'item6', image_name: "VideoCover1.jpg", title_name: ""},
-    {name: 'item7', image_name: "VideoCover1.jpg", title_name: ""},
+    // {name: 'item7', image_name: "VideoCover1.jpg", title_name: ""},
 ]
 
 

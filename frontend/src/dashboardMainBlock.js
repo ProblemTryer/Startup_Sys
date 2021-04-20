@@ -32,13 +32,13 @@ class ClubsCard extends Component{
                     </figure>
                 </div>
                 <div class="card-content">
-                    <div class="media">
+                    <div class="media" style={{height:"40px"}}>
                         <div class="media-content columns is-centered">
                             <p style={{font:"13px Lucida Handwriting, sans-serif"}}>
                             <p class="title is-3" >{this.club_name}</p></p>
                         </div>
                     </div>
-                    <div class="block">
+                    <div class="block" style={{height:"40px"}}>
                     <h class="title is-5">{this.text}</h>          
                     </div>
                     <div align="center">

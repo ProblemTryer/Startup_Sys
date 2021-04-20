@@ -11,11 +11,11 @@ import About from './about'
 const BasicRoute = () => (
     <HashRouter>
         <Switch>
-            <Route exact path="/" component={Index}/>
+            <Route exact path="/" component={About}/>
             <Route exact path="/login" component={Login}/>
             <Route exact path="/signup" component={Signup}/>
             <Route exact path="/dashboard" component={Dashboard}/>
-            <Route exact path="/about" component={About}/>
+            <Route exact path="/about" component={Index}/>
             <Route exact path="/videoDemo" component={VideoDemo}/>
             <Route exact path="/videoJourney" component={VideoJourney}/>
         </Switch>

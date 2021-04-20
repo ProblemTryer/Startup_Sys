@@ -11,7 +11,7 @@ class Index extends Component{
     render(){
         return (
             <div>
-                <TabBar value={false}/>
+                <TabBar value={true}/>
                 <IndexBlock />
             </div>
         )

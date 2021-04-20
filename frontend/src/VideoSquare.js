@@ -78,8 +78,14 @@ class VideoSqure extends Component{
     async componentDidUpdate(prevProps, prevState) {
         if (this.state.isSignedIn !== prevState.isSignedIn) {
             const idToken = await firebase.auth().currentUser?.getIdToken()
-            console.log(idToken)
-            const response = await fetch('http://localhost:8000/dev/tags', { 
+            // console.log(idToken)
+
+            let backendUrl = 'https://sadpandas.jinlong-h.com/dev/'
+            if (window.location.href.includes('localhost')) {
+                backendUrl = 'http://localhost:4000/dev/'
+            }
+
+            const response = await fetch(backendUrl + 'tags', { 
                 headers: {'Authorization': idToken}
             })
             if (response.status === 401) {
