@@ -19,7 +19,7 @@ module.exports.hello = async (event) =>{
         return{
             statusCode: 200,
             headers,
-            body: JSON.stringify({username: 'jh2695'})
+            body: JSON.stringify({username: new Date()})
         }
     }
     if (event.path === '/tags' && event.httpMethod === 'GET'){

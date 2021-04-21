@@ -21,6 +21,10 @@ functions:
   hello:  #name of the function
     handler: handler.hello
     events:
+      - http:
+          path: /orders
+          method: GET
+          cors: true
       - http: 
           path: /
           method: ANY
