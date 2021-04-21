@@ -19,5 +19,5 @@ class Index extends Component{
 }
 
 export default Index;
-
+document.body.parentElement.style.overflowY = "hidden";
 ReactDOM.render(<Router/>, document.getElementById('root'));
