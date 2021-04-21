@@ -10,9 +10,9 @@ custom:
   serverless-offline:
     httpPort: 8000
 
-package:
-  patterns:
-    - '!node_modules/**'
+# package:
+#   patterns:
+#     - '!node_modules/**'
 
 plugins:
   - serverless-offline
@@ -21,10 +21,6 @@ functions:
   hello:  #name of the function
     handler: handler.hello
     events:
-      - http:
-          path: /orders
-          method: GET
-          cors: true
       - http: 
           path: /
           method: ANY

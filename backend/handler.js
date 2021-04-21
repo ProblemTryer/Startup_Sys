@@ -20,7 +20,7 @@ module.exports.hello = async (event) =>{
             statusCode: 200,
             headers,
             body: JSON.stringify({
-                username: new Date(),
+                data: new Date(),
                 headers})
         }
     }
