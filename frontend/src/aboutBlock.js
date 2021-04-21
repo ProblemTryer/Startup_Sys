@@ -37,7 +37,7 @@ function LeftSection(props){
 }
 
 
-class IndexBlock extends Component{
+class AboutBlock extends Component{
     render(){
         return (
             <div class="tile is-ancestor">
@@ -59,4 +59,4 @@ class IndexBlock extends Component{
     }
 }
 
-export default IndexBlock;
+export default AboutBlock;

@@ -80,7 +80,7 @@ class VideoSqure extends Component{
             const idToken = await firebase.auth().currentUser?.getIdToken()
             // console.log(idToken)
 
-            let backendUrl = 'https://sadpandas.jinlong-h.com/dev/'
+            let backendUrl = 'https://n5g4ytjhec.execute-api.us-east-2.amazonaws.com/dev/'
             if (window.location.href.includes('localhost')) {
                 backendUrl = 'http://localhost:4000/dev/'
             }

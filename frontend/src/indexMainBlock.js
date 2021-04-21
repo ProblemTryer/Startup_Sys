@@ -270,7 +270,7 @@ ResponsiveContainer.propTypes = {
   children: PropTypes.node,
 }
 
-const AboutMainBlock = () => (
+const IndexMainBlock = () => (
   <ResponsiveContainer>
     <Segment style={{ padding: '8em 0em', backgroundColor: "white"}} vertical>
       <Grid container stackable verticalAlign='middle'>
@@ -366,4 +366,4 @@ const AboutMainBlock = () => (
 //     }
 // }
 
-export default AboutMainBlock;
+export default IndexMainBlock;

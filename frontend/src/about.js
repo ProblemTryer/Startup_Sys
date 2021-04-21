@@ -1,14 +1,16 @@
 import React, {Component} from 'react'
-import AboutMainBlock from './aboutMainBlock'
+import TabBar from './tabBar'
+import AboutBlock from './aboutBlock'
 
 class About extends Component{
     render(){
-        return(
+        return (
             <div>
-                <AboutMainBlock />
+                <TabBar value={true}/>
+                <AboutBlock />
             </div>
         )
     }
 }
 
-export default About
+export default About;
