@@ -2,7 +2,9 @@
   "name": "sadpandas-service",
   "description": "",
   "version": "0.1.0",
-  "dependencies": {},
+  "dependencies": {
+    "firebase-token-verifier": "^0.1.0"
+  },
   "devDependencies": {
     "firebase-token-verifier": "^0.1.0",
     "serverless": "^2.35.0",
