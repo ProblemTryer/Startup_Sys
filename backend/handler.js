@@ -1,6 +1,9 @@
 var testJson = require('./test.json');
 const firebaseTokenVerifier = require('firebase-token-verifier');
 
+const headers = {
+    'Access-Control-Allow-Origin': '*'
+}
 
 // fetch the function logs
 // serverless logs -f hello -t
@@ -8,6 +11,14 @@ module.exports.hello = async (event) =>{
     if (event.path === '/whoami' && event.httpMethod === 'GET'){
         return{
             statusCode: 200,
+            headers,
+            body: JSON.stringify({username: 'jh2695'})
+        }
+    }
+    if (event.path === '/orders' && event.httpMethod === 'GET'){
+        return{
+            statusCode: 200,
+            headers,
             body: JSON.stringify({username: 'jh2695'})
         }
     }
@@ -33,11 +44,13 @@ module.exports.hello = async (event) =>{
         }
         return{
             statusCode: 200,
+            headers,
             body: JSON.stringify(testJson)
         }
     }
     return{
         statusCode: 200,
+        headers,
         body: JSON.stringify(
             {
                 message: "hello world",
