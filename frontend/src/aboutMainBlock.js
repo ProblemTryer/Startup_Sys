@@ -272,7 +272,7 @@ ResponsiveContainer.propTypes = {
 
 const AboutMainBlock = () => (
   <ResponsiveContainer>
-    <Segment style={{ padding: '8em 0em'}} vertical>
+    <Segment style={{ padding: '8em 0em', backgroundColor: "white"}} vertical>
       <Grid container stackable verticalAlign='middle'>
         <Grid.Row>
           <Grid.Column width={8}>

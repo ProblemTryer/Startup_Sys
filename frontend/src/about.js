@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react'
+import React, {Component} from 'react'
 import AboutMainBlock from './aboutMainBlock'
 
 class About extends Component{
