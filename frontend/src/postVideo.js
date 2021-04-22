@@ -11,7 +11,7 @@ class InputForm extends Component{
         club_name: "Lonely Pandas",
         title: "",
         question_index: "P1",
-        time_stamp: Date.now,
+        time_stamp: Date.now(),
         data: ''
     }
 
