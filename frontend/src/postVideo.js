@@ -58,13 +58,13 @@ class InputForm extends Component{
             const response = await fetch(backendUrl + 'getVideo', { 
                 method: 'GET',
                 headers: {'Authorization': idToken},
-                extraData: JSON.stringify({
-                    club_name: this.state.club_name,
-                    title: this.state.title,
-                    question_index: this.state.question_index,
-                    time_stamp: this.state.time_stamp,
-                    data: this.state.data
-                })
+                // extraData: JSON.stringify({
+                //     club_name: this.state.club_name,
+                //     title: this.state.title,
+                //     question_index: this.state.question_index,
+                //     time_stamp: this.state.time_stamp,
+                //     data: this.state.data
+                // })
             }).then(function(data) {
                 return data.json()
             })
