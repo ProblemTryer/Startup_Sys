@@ -120,7 +120,6 @@ module.exports.hello = async (event) =>{
                 statusCode: 401
             }
         }
-        const video = await putVideo(token, "LonelyPandas", "My Experience in COVID", "P1", Date.now() , '')
         return{
             statusCode: 200,
             headers,
