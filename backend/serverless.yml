@@ -5,6 +5,18 @@ provider:
   runtime: nodejs14.x
   region: us-east-2
   lambdaHashingVersion: 20201221
+  iamRoleStatements: # permissions for all of your functions can be set here
+    - Effect: Allow
+      Action: # Gives permission to DynamoDB tables in a specific region
+        - dynamodb:DescribeTable
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource:
+        - 'arn:aws:dynamodb:us-east-1:754180521889:table/ClubVideos'
 
 custom:
   serverless-offline:
@@ -24,9 +36,14 @@ functions:
       - http: 
           path: /
           method: ANY
+      # - http: 
+      #     path: /tags
+      #     method: GET
+      #     cors: true
       - http: 
           path: /{proxy+}
           method: ANY
+          cors: true
 
 
     # events:

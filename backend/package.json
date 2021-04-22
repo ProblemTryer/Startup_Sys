@@ -2,7 +2,8 @@
   "name": "sadpandas-service",
   "description": "",
   "version": "0.1.0",
-  "dependencies": {
+  "dependencies": {    
+    "aws-sdk": "^2.890.0",
     "firebase-token-verifier": "^0.1.0"
   },
   "devDependencies": {
