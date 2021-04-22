@@ -44,7 +44,7 @@ class InputForm extends Component{
                     question_index: this.state.question_index,
                     time_stamp: this.state.time_stamp,
                     data: this.state.data
-                })    
+                })
             })
         }
     }
