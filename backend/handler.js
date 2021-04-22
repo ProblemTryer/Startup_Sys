@@ -160,7 +160,8 @@ module.exports.hello = async (event) =>{
     if (event.path === '/getVideo' && event.httpMethod === 'GET'){
         const projectId = 'sadpandas-81a75'
         const token =  event.headers['Authorization']
-        const dataBody = await JSON.parse(event.body)
+        // const dataBody = event.headers['question_index']
+        // console.log(dataBody)
         // If no token is provided, or it is "", return a 401
         if (!token) {
             return {
