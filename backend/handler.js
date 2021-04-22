@@ -18,7 +18,7 @@ const checkUser = async (event) => {
     return decodedUser
 }
 
-const putVideo = (UserID, ClubName, JoureyTitle, ProblemIndex, timeStamp, data) => {
+const putVideo = (UserID, ClubName, JoureyTitle, QuestionIndex, timeStamp, data) => {
     return docClient
     .put({
         TableName: "ClubVideos",
@@ -26,7 +26,7 @@ const putVideo = (UserID, ClubName, JoureyTitle, ProblemIndex, timeStamp, data) 
             user_id: UserID,
             club_name: ClubName,
             title: JoureyTitle,
-            problem_index: ProblemIndex,
+            question_index: QuestionIndex,
             time_stamp: timeStamp,
             data: ''
         },
@@ -127,8 +127,36 @@ module.exports.hello = async (event) =>{
         }
     }
 
-    if (event.path === '/getVideo' && event.httpMethod === 'POST'){
-        const video = await putVideo(token, "LonelyPandas", "My Experience in COVID", "P1", Date.now() , '')
+    if (event.path === '/putVideo' && event.httpMethod === 'POST'){
+        const projectId = 'sadpandas-81a75'
+        const token =  event.headers['Authorization']
+        const dataBody = await JSON.parse(event.body)
+        console.log(dataBody.time_stamp)
+        // console.log(token)
+        // If no token is provided, or it is "", return a 401
+        if (!token) {
+            return {
+                headers,
+                statusCode: 401
+            }
+        }
+        try {
+            // validate the token from the request
+            const decoded = await firebaseTokenVerifier.validate(token, projectId)
+        } catch (err) {
+            // the token was invalid,
+            console.error(err)
+            return {
+                headers,
+                statusCode: 401
+            }
+        }
+        const video = await putVideo(token, 
+            dataBody.club_name, 
+            dataBody.title,
+            dataBody.question_index, 
+            dataBody.time_stamp, 
+            dataBody.data)
     }
 
     if (event.path === '/getVideo' && event.httpMethod === 'GET'){
