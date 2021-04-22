@@ -12,7 +12,8 @@ class InputForm extends Component{
         title: "",
         question_index: "P1",
         time_stamp: Date.now(),
-        data: ''
+        data: '',
+        retrieve: ''
     }
 
     async componentDidMount() {
@@ -26,11 +27,9 @@ class InputForm extends Component{
         this.unregisterAuthObserver();
     }
 
-    async btnClick() {
+    async putVideo() {
         if(this.state.isSignedIn){
             const idToken = await firebase.auth().currentUser?.getIdToken()
-            // console.log(idToken)
-
             let backendUrl = 'https://n5g4ytjhec.execute-api.us-east-2.amazonaws.com/dev/'
             // if (window.location.href.includes('localhost')) {
             //     backendUrl = 'http://localhost:4000/dev/'
@@ -45,6 +44,32 @@ class InputForm extends Component{
                     time_stamp: this.state.time_stamp,
                     data: this.state.data
                 })
+            })
+        }
+    }
+
+    async getVideo() {
+        if(this.state.isSignedIn){
+            const idToken = await firebase.auth().currentUser?.getIdToken()
+            let backendUrl = 'https://n5g4ytjhec.execute-api.us-east-2.amazonaws.com/dev/'
+            // if (window.location.href.includes('localhost')) {
+            //     backendUrl = 'http://localhost:4000/dev/'
+            // }
+            const response = await fetch(backendUrl + 'getVideo', { 
+                method: 'GET',
+                headers: {'Authorization': idToken},
+                extraData: JSON.stringify({
+                    club_name: this.state.club_name,
+                    title: this.state.title,
+                    question_index: this.state.question_index,
+                    time_stamp: this.state.time_stamp,
+                    data: this.state.data
+                })
+            }).then(function(data) {
+                return data.json()
+            })
+            this.setState({
+                retrieve: "Title: " + response.title
             })
         }
     }
@@ -74,7 +99,7 @@ class InputForm extends Component{
                 <div class="container is-widescreen">
                     <div class="columns is-centered" >
                         <div class="notification is-primary">
-                            <strong>A Put Example In TEXT Form</strong>
+                            <strong>A Put() Example In TEXT Form</strong>
                         </div>
                     </div>
                     {/* https://react.semantic-ui.com/collections/form/#types-form */}
@@ -97,7 +122,9 @@ class InputForm extends Component{
                                 <label>I agree to the Terms and Conditions</label>
                             </div>
                         </div>
-                        <button type="submit" onClick={this.btnClick.bind(this)} class="ui button">Submit</button>
+                        <button type="submit" onClick={this.putVideo.bind(this)} class="ui button">Submit</button>
+                        <button type="submit" onClick={this.getVideo.bind(this)} class="ui button">Retrieve</button>
+                        <textarea class="textarea" disabled value={this.state.retrieve}></textarea>
                     </form>
                 </div>
                 </section>
