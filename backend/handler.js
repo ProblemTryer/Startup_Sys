@@ -18,7 +18,7 @@ const checkUser = async (event) => {
     return decodedUser
 }
 
-const putVideo = (UserID, ClubName, JoureyTitle, QuestionIndex, timeStamp, data) => {
+const putVideo = (UserID, ClubName, JoureyTitle, QuestionIndex, timeStamp, Data) => {
     return docClient
     .put({
         TableName: "ClubVideos",
@@ -28,7 +28,7 @@ const putVideo = (UserID, ClubName, JoureyTitle, QuestionIndex, timeStamp, data)
             title: JoureyTitle,
             question_index: QuestionIndex,
             time_stamp: timeStamp,
-            data: ''
+            data: Data
         },
     })
     .promise();
