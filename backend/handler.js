@@ -20,18 +20,18 @@ const checkUser = async (event) => {
 
 const putVideo = (UserID, ClubName, JoureyTitle, QuestionIndex, timeStamp, Data) => {
     return docClient
-    .put({
-        TableName: "ClubVideos",
-        Item: {
-            user_id: UserID,
-            club_name: ClubName,
-            title: JoureyTitle,
-            question_index: QuestionIndex,
-            time_stamp: timeStamp,
-            data: Data
-        },
-    })
-    .promise();
+        .put({
+            TableName: "ClubVideos",
+            Item: {
+                user_id: UserID,
+                club_name: ClubName,
+                title: JoureyTitle,
+                question_index: QuestionIndex,
+                time_stamp: timeStamp,
+                data: Data
+            },
+        })
+        .promise();
 };
 
 const getUserVideo = (user_id) => {
@@ -76,8 +76,6 @@ const getUserSOneVideo = (user_id, timeStamp ) => {
         .promise()
         .then((response) => response.Items);
 };
-
-
 
 // fetch the function logs
 // serverless logs -f hello -t
@@ -131,7 +129,7 @@ module.exports.hello = async (event) =>{
         const projectId = 'sadpandas-81a75'
         const token =  event.headers['Authorization']
         const dataBody = await JSON.parse(event.body)
-        console.log(dataBody.time_stamp)
+        // console.log(dataBody.time_stamp)
         // console.log(token)
         // If no token is provided, or it is "", return a 401
         if (!token) {
@@ -162,7 +160,7 @@ module.exports.hello = async (event) =>{
     if (event.path === '/getVideo' && event.httpMethod === 'GET'){
         const projectId = 'sadpandas-81a75'
         const token =  event.headers['Authorization']
-        console.log(token)
+        const dataBody = await JSON.parse(event.body)
         // If no token is provided, or it is "", return a 401
         if (!token) {
             return {
@@ -180,12 +178,24 @@ module.exports.hello = async (event) =>{
             }
         }
 
-        const video = await putVideo(token, "LonelyPandas", "My Experience in COVID", "P1", Date.now() , '')
-        // const UserVideo = await getUserVideo(token)
+        const UserVideo = await getUserVideo(token)
+        const info = UserVideo[0]
+        console.log("-------------")
+        console.log(UserVideo[0])
+        console.log("-------------")
+        console.log(info.time_stamp)
+        console.log("-------------")
         return{
             statusCode: 200,
             headers,
-            body: JSON.stringify(video)
+            // body: UserVideo
+            body: JSON.stringify({
+                    club_name: info.club_name,
+                    title: info.title,
+                    question_index: info.question_index,
+                    time_stamp: info.time_stamp,
+                    data: info.data
+            })
         }
     }
     return{
