@@ -5,8 +5,9 @@ import {Login, SignInScreen} from './login'
 import Signup from './signup'
 import Dashboard from './dashboard';
 import VideoDemo from './VideoSquare'
-import VideoJourney from './VideoPlay';
+import VideoJourney from './VideoJourney';
 import About from './about'
+import PostVideo from './postVideo'
 
 const BasicRoute = () => (
     <HashRouter>
@@ -18,6 +19,7 @@ const BasicRoute = () => (
             <Route exact path="/about" component={About}/>
             <Route exact path="/videoDemo" component={VideoDemo}/>
             <Route exact path="/videoJourney" component={VideoJourney}/>
+            <Route exact path="/postVideo" component={PostVideo}/>
         </Switch>
     </HashRouter>
 );

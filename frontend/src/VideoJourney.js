@@ -3,17 +3,6 @@ import ClubTabBar from './clubTabBar'
 import ScrollMenu from 'react-horizontal-scrolling-menu';
 require("./mycss.css")
 
-class BrandImage extends Component{
-    render(){
-        return (
-            <div>
-                <a class="" href="#/">
-                    <img alt='No image' src="logo.png"  style={{position:"relative", width:'100px', height:'100px', float:"right", marginRight:"5%", marginTop:"-1%"}} />
-                </a>
-            </div>
-        )
-    }
-}
 
 
 const Arrow = ({ text, className }) => {
@@ -128,7 +117,6 @@ class VideoJourney extends Component{
         return(
             <div>
                 <ClubTabBar clubName="Lonely Pandas"/>
-                <BrandImage />
                 <section class="section is-medium" style={{position:"fixed", marginTop:"-2%"}}>
                     <HorizontalScrollingVideo />
                 </section>

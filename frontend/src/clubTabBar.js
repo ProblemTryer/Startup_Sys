@@ -1,5 +1,18 @@
 import React, {Component, Fragment} from 'react'
 
+class BrandImage extends Component{
+    render(){
+        return (
+            <div>
+                <a class="" href="#/">
+                    <img alt='No image' src="logo.png"  style={{position:"relative", width:'100px', height:'100px', float:"right", marginRight:"5%", marginTop:"-1%"}} />
+                </a>
+            </div>
+        )
+    }
+}
+
+
 class ClubTabBar extends Component{
     constructor(props) {
         super(props);
@@ -33,6 +46,7 @@ class ClubTabBar extends Component{
                     <div class="navbar-start" ></div>
                 </div>
             </nav>
+            <BrandImage />
         </div>
         )
     }

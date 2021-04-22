@@ -1,19 +1,7 @@
 import React, {Component, Fragment} from 'react'
 import ClubTabBar from './clubTabBar'
 import firebase from "firebase/app";
-import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-
-class BrandImage extends Component{
-    render(){
-        return (
-            <div>
-                <a class="" href="#/">
-                    <img alt='No image' src="logo.png"  style={{position:"relative", width:'100px', height:'100px', float:"right", marginRight:"5%", marginTop:"-1%"}} />
-                </a>
-            </div>
-        )
-    }
-}
+// import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
 
 class VideosCard extends Component{
@@ -132,6 +120,12 @@ class VideoSqure extends Component{
                     <VideosCard title_name="A Lonely Lion, Help Me" image_name="VideoCover3.jpg" likes="49" comments="75"/>
                     <VideosCard title_name="Just Joined For Fun" image_name="VideoCover4.jpg" likes="123" comments="3"/>
                 </div>
+                <div style={{textAlign:"center"}}> 
+                    <a class="button is-link is-light is-large is-rounded is-success" href='#/postVideo'>
+                    <h class="title is-3" style={{marginRight:"10px", height: "50%"}}>Try the CBT Journey</h> 
+                    <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
             </section> 
         )
     }
@@ -143,7 +137,6 @@ class VideoDemo extends Component{
         return(
             <div>
                 <ClubTabBar clubName="Lonely Pandas"/>
-                <BrandImage />
                 <VideoSqure />
             </div>
         )
