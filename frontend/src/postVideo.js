@@ -52,19 +52,32 @@ class InputForm extends Component{
         if(this.state.isSignedIn){
             const idToken = await firebase.auth().currentUser?.getIdToken()
             let backendUrl = 'https://n5g4ytjhec.execute-api.us-east-2.amazonaws.com/dev/'
+
             // if (window.location.href.includes('localhost')) {
             //     backendUrl = 'http://localhost:4000/dev/'
             // }
-            const response = await fetch(backendUrl + 'getVideo', { 
+            const param = ''
+            const extraData = {
+                club_name: this.state.club_name,
+                title: this.state.title,
+                question_index: this.state.question_index,
+                time_stamp: this.state.time_stamp,
+                data: this.state.data
+            }
+
+            // if (params) {
+            //     let paramsArray = [];
+            //     Object.keys(params).forEach(key => paramsArray.push(key + '=' + params[key]))
+            //     if (url.search(/\?/) === -1) {
+            //         url += '?' + paramsArray.join('&')
+            //     } else {
+            //         url += '&' + paramsArray.join('&')
+            //     }
+            // }
+
+            const response = await fetch(backendUrl + 'getVideo' + param, { 
                 method: 'GET',
                 headers: {'Authorization': idToken},
-                // extraData: JSON.stringify({
-                //     club_name: this.state.club_name,
-                //     title: this.state.title,
-                //     question_index: this.state.question_index,
-                //     time_stamp: this.state.time_stamp,
-                //     data: this.state.data
-                // })
             }).then(function(data) {
                 return data.json()
             })
