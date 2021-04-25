@@ -69,9 +69,9 @@ class VideoSqure extends Component{
             // console.log(idToken)
 
             let backendUrl = 'https://n5g4ytjhec.execute-api.us-east-2.amazonaws.com/dev/'
-            if (window.location.href.includes('localhost')) {
-                backendUrl = 'http://localhost:4000/dev/'
-            }
+            // if (window.location.href.includes('localhost')) {
+            //     backendUrl = 'http://localhost:4000/dev/'
+            // }
 
             const response = await fetch(backendUrl + 'tags', { 
                 headers: {'Authorization': idToken}
@@ -117,12 +117,11 @@ class VideoSqure extends Component{
                     <VideosCard title_name="I Am Not Alone Now" image_name="VideoCover2.jpg" likes="34" comments="45"/> */}
                 </div>
                 <div class="columns is-centered" >
-                    { this.state.videos && (() => { 
-                        return <Fragment> 
-                               <VideosCard title_name="A Lonely Lion, Help Me" image_name="VideoCover3.jpg" likes="49" comments="75"/>
-                               <VideosCard title_name="Just Joined For Fun" image_name="VideoCover4.jpg" likes="123" comments="3"/>
-                            </Fragment> 
-                        })
+                    {this.state.videos &&  
+                        <Fragment> 
+                            <VideosCard title_name="A Lonely Lion, Help Me" image_name="VideoCover3.jpg" likes="49" comments="75"/>
+                            <VideosCard title_name="Just Joined For Fun" image_name="VideoCover4.jpg" likes="123" comments="3"/>
+                        </Fragment>
                     }
                 </div>
                 <div style={{textAlign:"center"}}> 
