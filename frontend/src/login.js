@@ -61,9 +61,8 @@ class SignEDInScreen extends React.Component {
     render() {
       return (
         <div align="center" >
-            <h1 class="title is-5">Already Logged in:</h1>
-            <h1 class="title is-5">{firebase.auth().currentUser.displayName}</h1>
-            <h1 class="title is-5">{firebase.auth().currentUser.email}</h1>
+            <h1 class="title is-5">Hi, {firebase.auth().currentUser.displayName}</h1>
+            <h1 class="title is-5">You are already Logged in</h1>
             <a class="button is-link is-light is-large is-rounded is-success" href='#/dashboard'>
                 <h class="title is-3" style={{marginRight:"10px", height: "50%"}}>Go to the demo</h> 
                 <i class="fas fa-arrow-right"></i>

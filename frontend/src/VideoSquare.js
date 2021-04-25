@@ -117,8 +117,13 @@ class VideoSqure extends Component{
                     <VideosCard title_name="I Am Not Alone Now" image_name="VideoCover2.jpg" likes="34" comments="45"/> */}
                 </div>
                 <div class="columns is-centered" >
-                    <VideosCard title_name="A Lonely Lion, Help Me" image_name="VideoCover3.jpg" likes="49" comments="75"/>
-                    <VideosCard title_name="Just Joined For Fun" image_name="VideoCover4.jpg" likes="123" comments="3"/>
+                    { this.state.videos && (() => { 
+                        return <Fragment> 
+                               <VideosCard title_name="A Lonely Lion, Help Me" image_name="VideoCover3.jpg" likes="49" comments="75"/>
+                               <VideosCard title_name="Just Joined For Fun" image_name="VideoCover4.jpg" likes="123" comments="3"/>
+                            </Fragment> 
+                        })
+                    }
                 </div>
                 <div style={{textAlign:"center"}}> 
                     <a class="button is-link is-light is-large is-rounded is-success" href='#/postVideo'>
