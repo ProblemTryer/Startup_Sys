@@ -7,7 +7,7 @@ function RightSection(props){
             <figure class="image is-128x128">
                 <img alt='No image' src="logo.png" />
             </figure>
-            <strong><h1 class="title is-4">{props.word}</h1></strong>
+            {/* <strong><h1 class="title is-4">{props.word}</h1></strong> */}
         </div>
     )
 }
@@ -51,7 +51,7 @@ class AboutBlock extends Component{
                     <div class="column is-one-quarter" /><div class="column is-one-quarter" />
                     <div class="column is-one-quarter" /><div class="column is-one-quarter" />
                     <div class="column is-one-quarter" /><div class="column is-one-quarter" /><div class="column is-one-quarter" />
-                    <RightSection word='SadPandas Club'> </RightSection>
+                    <RightSection> </RightSection>
                 </div>
                 <div class="tile is-2 is-parent"></div>
             </div>
