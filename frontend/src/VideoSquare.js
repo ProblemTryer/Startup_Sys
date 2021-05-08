@@ -98,32 +98,35 @@ class VideoSqure extends Component{
     }
 
     render(){
-        if (!this.state.isSignedIn) {
-            return (
-              <div style={{margin:"0 auto"}}>
-                <h1>Please login</h1>
-              </div>
-            );
-        }
+
         return(
             <section class="section is-medium">
+                {!this.state.isSignedIn && 
+                    <div style={{textAlign:"center"}}>
+                        <h3>Please <a href="#/login">login</a> to view more</h3>
+                        <div class="column" />
+                    </div>
+                }
                 <div class="columns is-centered" >
                     {
-                        this.state.videos && this.state.videos.map(video => {
-                            return <VideosCard title_name={video} image_name="VideoCover1.jpg" likes="50" comments="24"/>
-                        })
+                        this.state.videos && 
+                            <Fragment> 
+                            <VideosCard title_name="My Experience in COVID" image_name="VideoCover1.jpg" likes="50" comments="24"/>
+                            <VideosCard title_name="I Am Not Alone Now" image_name="VideoCover2.jpg" likes="34" comments="45"/>
+                            </Fragment>
                     }
                     {/* <VideosCard title_name="My Experience in COVID" image_name="VideoCover1.jpg" likes="50" comments="24"/>
                     <VideosCard title_name="I Am Not Alone Now" image_name="VideoCover2.jpg" likes="34" comments="45"/> */}
                 </div>
                 <div class="columns is-centered" >
-                    {this.state.videos &&  
+                    {/* {this.state.videos &&   */}
                         <Fragment> 
                             <VideosCard title_name="A Lonely Lion, Help Me" image_name="VideoCover3.jpg" likes="49" comments="75"/>
                             <VideosCard title_name="Just Joined For Fun" image_name="VideoCover4.jpg" likes="123" comments="3"/>
                         </Fragment>
-                    }
+                    {/* } */}
                 </div>
+
                 <div style={{textAlign:"center"}}> 
                     <a class="button is-link is-light is-large is-rounded is-success" href='#/postVideo'>
                     <h class="title is-3" style={{marginRight:"10px", height: "50%"}}>Try the CBT Journey</h> 

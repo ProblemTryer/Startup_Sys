@@ -17,9 +17,11 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "redux": "^4.1.0",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "2.0.3",
     "serverless-offline": "^6.9.0",
+    "video-react": "^0.14.1",
     "web-vitals": "^1.1.1"
   },
   "scripts": {

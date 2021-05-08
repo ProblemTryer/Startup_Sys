@@ -117,31 +117,31 @@ class DesktopContainer extends Component {
                             <a href="/">
                             <figure class="image" style={{height:"35px", width:"45px"}}>
                                 <img alt='No image' style={{float:'right', height:"33px", width:"35px"}} src="logo.png" />
-                                <p style={{fontSize:"small", color:fixed? "#000000": "#F0FFFF"}}>SadPandas</p>
+                                <p style={{fontSize:"small", color:fixed? "#000000": "#FFFFFF"}}>SadPandas</p>
                             </figure>
                             
                             </a>
                         </div>
                         <a class="navbar-item" href="#/about">
-                            <h1 class="title is-4" style={{color:fixed? "#000000": "#F0FFFF"}}>About</h1>
+                            <h1 class="title is-4" style={{color:fixed? "#000000": "#FFFFFF"}}>About</h1>
                         </a>
 
                         <a class="navbar-item" >
-                            <a href={`mailto:jh2695@cornell.edu`}><h1 class="title is-4" style={{color:fixed? "#000000": "#F0FFFF"}}>Help</h1></a>
+                            <a href={`mailto:jh2695@cornell.edu`}><h1 class="title is-4" style={{color:fixed? "#000000": "#FFFFFF"}}>Help</h1></a>
                         </a>
 
                         <a class="navbar-item" href="#/dashboard">
-                            <h1 class="title is-4"  style={{color:fixed? "#000000": "#F0FFFF"}}>Demo</h1>
+                            <h1 class="title is-4"  style={{color:fixed? "#000000": "#FFFFFF"}}>Demo</h1>
                         </a>
 
                         <div class="navbar-item has-dropdown is-hoverable" style={{backgroundColor: "transparent"}}>
                             <a class="navbar-link">
-                                <h1 class="title is-4" style={{color:fixed? "#000000": "#F0FFFF"}}>More</h1>
+                                <h1 class="title is-4" style={{color:fixed? "#000000": "#FFFFFF"}}>More</h1>
                             </a>
 
                             <div class="navbar-dropdown" style={{border:"0px", backgroundColor: fixed? "white": "transparent"}}>
                                 <a class="navbar-item">
-                                <a href={`mailto:jh2695@cornell.edu`}><h1 class="title is-5" style={{color:fixed? "#000000": "#F0FFFF"}}>Contact</h1></a>
+                                <a href={`mailto:jh2695@cornell.edu`}><h1 class="title is-5" style={{color:fixed? "#000000": "#FFFFFF"}}>Contact</h1></a>
                                 </a>
                             </div>
                         </div>
