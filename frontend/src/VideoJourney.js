@@ -26,7 +26,7 @@ const questions = {
 }
 
 const data = [
-    {name: 'item1', image_name: "VideoCover2.jpg", video_path:"q1.mp4", title_name: questions.q1},
+    {name: 'item1', image_name: "VideoCover2.jpg", video_path:"qq1.mp4", title_name: questions.q1},
     {name: 'item2', image_name: "VideoCover2.jpg", video_path:"q2.mp4", title_name: questions.q2},
     {name: 'item3', image_name: "VideoCover2.jpg", video_path:"q3.mp4", title_name: questions.q3},
     {name: 'item4', image_name: "VideoCover2.jpg", video_path:"q4.mp4", title_name: questions.q4},
@@ -59,7 +59,7 @@ class VideoCard extends Component{
                 <div class="card-image">
                     <figure class="image"> 
                     <img style={{height:"1000", width:"1000px"}}/>
-                    <Player playsInline type="video/mp4" poster={this.image_name} fluid={false}>
+                    <Player playsInline type="video/mp4" poster={this.image_name} fluid={false} width={800} height={400}>
                         <source src={this.video_path} />
                     </Player>
                     </figure>
