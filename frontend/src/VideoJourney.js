@@ -1,7 +1,8 @@
 import React, {Component, Fragment} from 'react'
 import ClubTabBar from './clubTabBar'
 import ScrollMenu from 'react-horizontal-scrolling-menu';
-import { Player, ControlBar, PlaybackRateMenuButton } from 'video-react';
+import { Player} from 'video-react';
+import "../node_modules/video-react/dist/video-react.css"; // import css
 
 require("./mycss.css")
 
