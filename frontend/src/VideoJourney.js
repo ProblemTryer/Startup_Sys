@@ -57,8 +57,8 @@ class VideoCard extends Component{
 
                 <div class="card-image">
                     <figure class="image"> 
-                    <img style={{height:"0", width:"1000px"}}/>
-                    <Player playsInline type="video/mp4" videoWidth poster={this.image_name} fluid={false}>
+                    <img style={{height:"1000", width:"1000px"}}/>
+                    <Player playsInline type="video/mp4" poster={this.image_name} fluid={false}>
                         <source src={this.video_path} />
                     </Player>
                     </figure>
